@@ -63,3 +63,26 @@ A successful update returns `204 No Content`. An update using a stale `rowVersio
 ## Database Index
 
 An index on `Product.Name` supports name-based filtering. Its actual performance benefit depends on the query and database execution plan.
+## Database Configuration
+
+Before running the project, update the `DefaultConnection` connection string in `appsettings.json` to match your local SQL Server instance.
+
+Example:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=AdvancedEFCoreTaskDb;Trusted_Connection=True;TrustServerCertificate=True"
+}
+```
+
+Replace `YOUR_SERVER_NAME` with your SQL Server instance name.
+
+Make sure SQL Server is running and Windows Authentication is configured correctly.
+
+## Run the Project
+
+```bash
+dotnet restore
+dotnet build
+dotnet run
+```
